@@ -12,6 +12,9 @@ if ($_POST['sum'] < 1000 || $_POST['sum'] > 3000000) {
 } elseif (gettype($_POST['percent']*1) !== integer || $_POST['percent'] < 3 || $_POST['percent'] > 100) {
   echo 'Процент это целое число от 3 до 100';
   exit();
+} elseif ($_POST['selectDuration'] == 'Год' && ($_POST['term'] < 1 || $_POST['term'] > 5)) {
+  echo 'Продолжительность вклада может быть в пределах от 1 до 60 месяцев, либо от 1 до 5 лет';
+  exit();
 }
 
 if ($_POST['selectDuration'] == 'Год') {
