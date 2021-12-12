@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/reset.css">
+  <link rel="stylesheet" href="assets/datepicker.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a class="logo__link" href=""><img class="logo__img" src="assets/logo-light 1.svg" alt="logo"></a>
+        <h2 class="header__title">Deposit Calculator</h2>
+      </div>
+    </div>
+  </header>
+
+  <section class="calculator">
+    <div class="container"> 
+        <form method="post" id="form" class="form__calculator" action="calc.php">
+          <h1 class="form__title">Депозитный калькулятор</h1>
+          <p class="form__description">Калькулятор депозитов позволяет рассчитать ваши доходы после внесения суммы на счет в банке по опредленному тарифу.</p>
+          <div class="form">
+            <!-- form item -->
+            <div class="form__item">
+              
+              <input class="form__input" id="formDate" type="text" name="startDate" required>
+              <label class="form__label" for="formDate">Дата открытия:</label>
+            </div>
+            <!-- form item -->
+            <div class="form__item">
+              
+              <input class="form__input form__input-duration" id="formDuration" type="text" name="term" required><label class="form__label" for="formDuration">Срок вклада:</label>
+              <select class="selectDuration" id="select" name="selectDuration">
+                <option name="month" value="month">Месяц</option>
+                <option name="year" value="year">Год</option>
+              </select>
+            </div>
+            <!-- form item -->
+            <div class="form__item">
+              <input class="form__input" id="formDeposit" type="text" name="sum" required>
+              <label class="form__label" for="formDeposit">Сумма вклада:</label>
+            </div>
+            <!-- form item -->
+            <div class="form__item">
+              <input class="form__input" id="formPercent" type="text" name="percent" value="10" required>
+              <label class="form__label" for="formPercent">Процентная ставка, % годовых:</label>
+            </div>
+            <!-- form item -->
+            <div class="form__item">
+              <input class="checkbox__input" id="formCheck" type="checkbox" checked>
+              <label class="checkbox__label" for="formCheck">Ежемесячное пополнение вклада</label>
+            </div>
+            <!-- form item -->
+            <div class="form__item" id="hideThis">
+              <input class="form__input form__input-refill" id="formRefill" type="text" name="sumAdd" required value="0">
+              <label class="form__label" for="formRefill">Сумма пополнения вклада</label>
+            </div>
+            <!-- form button -->
+            <button class="form__btn" type="submit" id="formBtn">Рассчитать</button>
+          </div>
+          <hr id="form__line" class="form__line">
+          <div style="max-width: 560px;margin: 0 auto;padding-bottom: 50px; font-size: 22px; line-height: 100%; text-align: center;" id="errorMess"></div>  
+        </form>
+    </div>
+    
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="assets/datepicker.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
